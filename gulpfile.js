@@ -32,7 +32,7 @@ gulp.task('default', function(cb) {
 });
 
 gulp.task('run', function(cb) {
-  runSequence('watch', 'serve', cb);
+  runSequence('install', 'watch', 'serve', cb);
 });
 
 gulp.task('watch', ['build'], function() {
@@ -48,17 +48,21 @@ gulp.task('build', function(cb) {
   runSequence('clean', ['assets', 'templates', 'styles'], 'index', cb);
 });
 
+gulp.task('install', function(cb) {
+  spawn('bower', ['update', '--quiet'], {stdio: 'inherit'}).on('exit', cb);
+});
+
 gulp.task('clean', function(cb) {
   var del = require('del');
 
-  del(['dist'], cb);
+  del(['dist/content'], cb);
 });
 
 gulp.task('index', function() {
   var inject = require('gulp-inject');
 
   return gulp.src('src/index.html')
-    .pipe(inject(gulp.src(['dist/**/*.js', 'dist/**/*.css'], {read: false}), {
+    .pipe(inject(gulp.src(['dist/*.js', 'dist/*.css'], {read: false}), {
       ignorePath: ['dist'],
       addRootSlash: false
     }))

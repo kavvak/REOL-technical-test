@@ -1,0 +1,15 @@
+{
+  "name": "REOL-Technical-Test",
+  "description": "Technical test for REOL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "dist"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "lodash": "^4.6.1",
+    "bootstrap": "^3.3.6"
+  }
+}
