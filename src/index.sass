@@ -1,9 +1,23 @@
 body
-	background: rgba(0,0,0,0.1)
+	background: #fff
 	color: black
 	text-align: center
 	font-family: arial
 	margin: 0
+
+hr
+	border-color: #ccc
+	&.light
+		border-color: #eee
+	&.dashed
+		border-style: dashed
+	&.no-margin
+		margin: 0
+
+.flat-button
+	border: none
+	box-shadow: none
+	border-collapse: collapse
 
 header
 	padding: 20px 0
@@ -30,3 +44,116 @@ header
 		img
 			width: 200px
 			height: auto
+
+nav.navbar
+	border: none
+	li
+		font-size: 16px
+		.tab-item
+			color: #000
+		&.active
+			.tab-item
+				color: #00AEEF
+				font-weight: bold
+		.client-login
+			span
+				margin-right: 10px
+			background: #66CEF5
+			color: #fff
+
+section.content
+	padding-bottom: 40px
+	.navbar
+		margin-bottom: 0
+		.sort-dropdown button
+			font-size: 18px
+			background: transparent
+			.caret
+				margin-left: 10px
+	.grid
+		padding: 20px 0
+		.grid-row
+			padding: 0 10px
+			.address
+				.contract-signed
+					color: #0BC95F
+					font-size: 18px
+					span
+						font-size: 14px
+
+section.join-us
+	background: #7FD6F8
+	padding: 40px 0
+	.h1
+		color: #fff
+		font-size: 48px
+	.register-btn
+		button
+			width: 100%
+			height: 75px
+			background: #00AEEF
+			font-size: 28px
+			font-weight: bold
+
+section.register
+	background: #EDEDED
+	padding: 40px 0
+	input
+		width: 100%
+		height: 43px
+		padding: 0 10px
+	textarea
+		padding: 10px 10px
+		width: 100%
+		height: 150px
+	.contacts
+		padding-top: 10px
+	.phone
+		font-size: 26px
+		font-weight: bold
+		color: #666
+		span
+			font-size: 20px
+			color: #00AEEF
+			padding-right: 10px
+	.email
+		font-size: 26px
+		a
+			color: #666
+			text-decoration: none
+		span
+			font-size: 20px
+			color: #00AEEF
+			padding-right: 10px
+	.send-btn
+		button
+			width: 100%
+			height: 50px
+			background: #00AEEF
+			font-size: 20px
+
+footer
+	padding: 40px 0
+	background: #F7F7F7
+	.info
+		.name
+			color: #00AEEF
+			font-size: 16px
+		address
+			padding-left: 20px
+			display: inline-block
+			color: #aaa
+		.phone
+			padding-left: 20px
+			font-weight: normal
+		.email
+			padding-left: 20px
+			color: #47D9FF
+			font-size: 16px
+		.social-links
+			padding-left: 5px
+			svg
+				fill: #47D9FF
+				color: #47D9FF
+				width: 20px
+				height: 20px
