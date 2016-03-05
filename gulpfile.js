@@ -40,12 +40,11 @@ gulp.task('watch', ['build'], function() {
 
   gulp.watch(['src/index.html'], ['index']);
   gulp.watch(['src/content/**/*'], ['assets']);
-  gulp.watch(['src/**/*.html'], ['templates']);
   gulp.watch(['src/**/*.sass', 'src/**/*.scss'], ['styles']);
 });
 
 gulp.task('build', function(cb) {
-  runSequence('clean', ['assets', 'templates', 'styles'], 'index', cb);
+  runSequence('clean', ['assets', 'styles'], 'index', cb);
 });
 
 gulp.task('install', function(cb) {
@@ -55,7 +54,7 @@ gulp.task('install', function(cb) {
 gulp.task('clean', function(cb) {
   var del = require('del');
 
-  del(['dist/content'], cb);
+  del(['dist/content', 'dist/*.html', 'dist/*.css'], cb);
 });
 
 gulp.task('index', function() {
@@ -72,11 +71,6 @@ gulp.task('index', function() {
 gulp.task('assets', function() {
   return gulp.src('src/content/**/*')
     .pipe(gulp.dest('dist/content'));
-});
-
-gulp.task('templates', function() {
-  return gulp.src('src/**/*.html')
-    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('styles', function() {
